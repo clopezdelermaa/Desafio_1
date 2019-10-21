@@ -14,13 +14,21 @@ package Datos;
 public class Aula {
     private int cod_Aula;
     private String Descripcion;
-    
+    private String estado;
     
   //-----------------CONSTRUCTOR-----------------
-    
+
     public Aula(int cod_Aula, String Descripcion) {
         this.cod_Aula = cod_Aula;
         this.Descripcion = Descripcion;
+    }
+    
+    
+    
+    public Aula(int cod_Aula, String Descripcion, String estado) {
+        this.cod_Aula = cod_Aula;
+        this.Descripcion = Descripcion;
+        this.estado = estado;
     }
     
     
@@ -41,6 +49,15 @@ public class Aula {
     public void setDescripcion(String Descripcion) {
         this.Descripcion = Descripcion;
     }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+    
     
       //----------------TO STRING-------------
 
