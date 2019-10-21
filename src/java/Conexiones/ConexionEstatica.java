@@ -7,6 +7,7 @@ package Conexiones;
 
 import Auxiliar.Constantes;
 import Datos.Aula;
+import Datos.Horario;
 import Datos.Profesor;
 import java.sql.SQLException;
 import java.util.LinkedList;
@@ -133,6 +134,21 @@ public class ConexionEstatica {
         return listaulas;
     }
     
+    public static LinkedList Obtenerhoras () {
+        LinkedList listahoras = new LinkedList<>();
+        Horario h;
+        try {
+            String sentencia = "SELECT * FROM Horario";
+            Conj_registros = Sentencia_sql.executeQuery(sentencia);
+            while (Conj_registros.next()) {
+                h = new Horario (Conj_registros.getInt("numero"), Conj_registros.getString("comienzo"), Conj_registros.getString("final"));
+                listahoras.add(h);
+            }
+        } catch (SQLException ex) {
+            
+        }
+        return listahoras;
+    }
     
     //--------MÉTODOS DE INSERCIÓN, MODIFICACION Y BORRADO PROVISIONALES----------
     

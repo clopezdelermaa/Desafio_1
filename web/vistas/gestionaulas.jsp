@@ -13,7 +13,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Gestión de aulas</title>
         <link rel="stylesheet" type="text/css" href="css/miestilo.css">
     </head>
     <body>
@@ -23,7 +23,6 @@
             for (int i = 0; i <listaulas.size(); i++) {
                 a = listaulas.get(i);
                 
-
         %>
         <table>
             <thead>
