@@ -15,5 +15,7 @@ public class Constantes {
     public static String password="Chubaca2019";
     public static String ficherobitacora="bitacoradesafio.txt";
     public static String tablaprofesores="profesores";
+    public static String tablaula = "Aula";
+    public static String tablarol = "Roles";
     
 }

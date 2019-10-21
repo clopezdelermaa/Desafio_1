@@ -33,4 +33,29 @@
                     
         }
     }
+    
+//-----------------------Cuando el usuario hace el registro----------------------
+
+    if (request.getParameter("aceptaregistro") != null ) {
+        ConexionEstatica.nueva();
+        int adming = 0;
+        int adminau = 0;
+        int cod = 0;
+        
+        if (request.getParameter("usuario").equals("admingeneral")) {
+            adming = 1;
+        }
+        ConexionEstatica.Insertarprofesores(cod, request.getParameter("nombre"), request.getParameter("email"), request.getParameter("passwd"));
+        session.setAttribute("listausuarios", ConexionEstatica.Obtenerusuarios());
+        String usuario = (String) (session.getAttribute("usuario"));
+        LinkedList<Profesor> listaprofesores = ConexionEstatica.Obtenerusuarios2(usuario);
+        session.setAttribute("usuarios", usuario);
+        if (session.getAttribute("origen") != null) {
+            response.sendRedirect("vistas/admingeneral.jsp");
+        } else {
+            response.sendRedirect("index.jsp");
+        }
+        ConexionEstatica.cerrarBD();
+    }
+
 %>

@@ -141,6 +141,13 @@ public class ConexionEstatica {
        Sentencia_sql.executeUpdate(sentencia);
    }
    
+    public static void Insertarprofesores ( int cod, String nombre, String usuario, String passwd) throws SQLException {
+        
+        String sentencia = "INSERT INTO " + Constantes.tablaprofesores + "VALUES(" + cod + ",'" + nombre + "','" + usuario + "','" + passwd + "')";
+        Sentencia_sql.executeQuery(sentencia);
+        
+    }
+     
    public static void Insertarusuario (String tabla, String email, String nombre, int edad, String passwd, String tipo) throws SQLException {
        String sentencia = "INSERT INTO " + Constantes.tablaprofesores + " VALUES('" + email + "'," + "'" + nombre + "'," + edad + ", '" + passwd + "'," + "'" + tipo + "')";
        Sentencia_sql.executeUpdate(sentencia);

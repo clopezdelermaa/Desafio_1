@@ -14,6 +14,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <link rel="stylesheet" type="text/css" href="css/miestilo.css">
     </head>
     <body>
         <%
@@ -72,5 +73,6 @@
         </table>
         <% }
         %>
+        <a href="index.jsp"><input type="button" name="volver" value="Volver"></a>
     </body>
 </html>
