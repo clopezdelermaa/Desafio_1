@@ -13,6 +13,13 @@
         <link rel="stylesheet" type="text/css" href="css/miestilo.css">
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <form name="adminaula" action="" method="POST">
+            <a href="cuadrante.jsp"><input type="button" name="cuadrante" value="Ver cuadrante"></a>
+            <br>
+            <a href="gestionaulas.jsp"><input type="button" name="gestionaula" value="Gestionar aulas"></a>
+            <br>
+            <a href="gestionarhorario.jsp"><input type="button" name="gestionhorario" value="Gestionar Franjas Horarias"></a>
+            <br>
+        </form>
     </body>
 </html>
