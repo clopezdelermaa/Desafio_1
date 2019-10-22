@@ -18,11 +18,13 @@
     </head>
     <body>
         <%
-            LinkedList<Aula> listaulas = ConexionEstatica.Obteneraulas();
-            Aula a;
-            for (int i = 0; i <listaulas.size(); i++) {
-                a = listaulas.get(i);
-                
+            if (request.getParameter("iniciar") != null) {
+                if (request.getParameter("usuario").equals("adminaula")) {
+                    LinkedList<Aula> listaulas = ConexionEstatica.Obteneraulas();
+                    Aula a;
+                    for (int i = 0; i < listaulas.size(); i++) {
+                        a = listaulas.get(i);
+
         %>
         <table>
             <thead>
@@ -63,7 +65,7 @@
                     <td><input type="button" name="borrar" value="Borrar"></td>
                 </tr>
                 <tr>
-                   <td><input type="text" name="aula1" value="<%=a.getCod_Aula()%>"></td>
+                    <td><input type="text" name="aula1" value="<%=a.getCod_Aula()%>"></td>
                     <td><input type="text" name="descripcion1" value="<%=a.getDescripcion()%>"></td>
                     <td><input type="button" name="editar" value="Editar"></td>
                     <td><input type="button" name="borrar" value="Borrar"></td>
@@ -71,6 +73,8 @@
             </tbody>
         </table>
         <% }
+                }
+            }
         %>
         <a href="index.jsp"><input type="button" name="volver" value="Volver"></a>
     </body>

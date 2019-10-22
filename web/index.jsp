@@ -24,7 +24,7 @@
                 <a href="registro.jsp">Registrarse</a>
                 <a href="recuperarpasswd.jsp">¿Ha olvidado su contraseña?</a><br>
                 
-                <input type="submit" name="aceptarlogin" value="Aceptar">
+                <input type="submit" name="ibnicio" value="Aceptar">
             </form>
         </div>
         

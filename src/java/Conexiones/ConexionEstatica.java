@@ -45,10 +45,10 @@ public class ConexionEstatica {
         }
     }
     
-    public static Profesor Existeusuario (String usuario) {
+    public static Profesor Existeusuario (String usuario, String passwd) {
         Profesor existe = null;
         try {
-            String sentencia = "SELECT * FROM " + Constantes.tablaprofesores + "WHERE usuario='" + usuario + "'";
+            String sentencia = "SELECT * FROM " + Constantes.tablaprofesores + "WHERE usuario='" + usuario + "' AND passwd= '" + passwd + "'"; ;
             Conj_registros = Sentencia_sql.executeQuery(sentencia);
             if (Conj_registros.next()) {
                 existe = new Profesor (Conj_registros.getInt("cod_profesor"), Conj_registros.getString("nombre"), Conj_registros.getString("usuario"), Conj_registros.getString("passwd"), Conj_registros.getInt("rol"));
@@ -58,7 +58,13 @@ public class ConexionEstatica {
         }
         return existe; // Si el resultado es nulo quiere decir que el usuario no existe en la base de datos
     }
-    
+    /**
+     * Para comprobar si existe el usuario mediante su email y contraseña para ver
+     * si coinciden con lo que hay en la base de datos
+     * @param usuario
+     * @param passwd
+     * @return 
+     */
     public static boolean Existeusuario2 (String usuario, String passwd) {
         Profesor existe = null;
         boolean esta = false;
@@ -117,6 +123,12 @@ public class ConexionEstatica {
         }
         return listausuarios;
     }
+    /**
+     * Método para obtener todas las aulas que hay en la base de datos y meterlas 
+     * en una lista
+     * @return 
+     * @since 21/10/2019
+     */
     
     public static LinkedList Obteneraulas () {
         LinkedList listaulas = new LinkedList<>();
@@ -133,6 +145,12 @@ public class ConexionEstatica {
         }
         return listaulas;
     }
+    /**
+     * Método para meter todas las horas de la franja horaria en una lista y poder
+     * manejar con ella
+     * @return 
+     * @since 21/10/2019
+     */
     
     public static LinkedList Obtenerhoras () {
         LinkedList listahoras = new LinkedList<>();
@@ -149,6 +167,8 @@ public class ConexionEstatica {
         }
         return listahoras;
     }
+    
+    
     
     //--------MÉTODOS DE INSERCIÓN, MODIFICACION Y BORRADO PROVISIONALES----------
     

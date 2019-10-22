@@ -4,19 +4,17 @@
     Author     : daw206
 --%>
 
+<%@page import="Auxiliar.Bitacora"%>
 <%@page import="java.util.LinkedList"%>
 <%@page import="Conexiones.ConexionEstatica"%>
 <%@page import="Datos.Profesor"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
     //-----Esto es cuando le das a aceptar en el index
-    if (request.getParameter("aceptarlogin") != null) {
+    if (request.getParameter("iniciar") != null) {
         ConexionEstatica.nueva();
-        String usuario = request.getParameter("usuario");
-        Profesor p = ConexionEstatica.Existeusuario(usuario);
-        if (p != null) {
-            session.setAttribute("usuarioregistrado", p);
-            LinkedList<Profesor>listausuarios = ConexionEstatica.Obtenerusuarios();
+        if (ConexionEstatica.Existeusuario2(request.getParameter("usuario"), request.getParameter("passwd"))) {
+            Profesor p = ConexionEstatica.Existeusuario(request.getParameter("usuario"), request.getParameter("passwd"));
             switch (p.getRol()) {
                 case 1:
                     session.setAttribute("admingeneral", p.getUsuario());
@@ -30,9 +28,15 @@
                     session.setAttribute("profesor", p.getUsuario());
                     response.sendRedirect("vistas/profesor.jsp");
             }
+            Bitacora.Escribirbitacora("Usuario " + p.getUsuario() + " ha entrado en el sistema");
+        } else {
+            response.sendRedirect("vistas/incorrecto.jsp");
+        }
+        
+        ConexionEstatica.cerrarBD();
                     
         }
-    }
+    
     
 //-----------------------Cuando el usuario hace el registro----------------------
 
@@ -44,6 +48,10 @@
         
         if (request.getParameter("usuario").equals("admingeneral")) {
             adming = 1;
+        } else {
+            if (request.getParameter("usuario").equals("adminaula")) {
+                adminau = 1;
+            }
         }
         ConexionEstatica.Insertarprofesores(cod, request.getParameter("nombre"), request.getParameter("email"), request.getParameter("passwd"));
         session.setAttribute("listausuarios", ConexionEstatica.Obtenerusuarios());
@@ -57,5 +65,7 @@
         }
         ConexionEstatica.cerrarBD();
     }
+    
+    //-------------------------------
 
 %>

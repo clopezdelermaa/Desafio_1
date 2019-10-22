@@ -4,6 +4,7 @@
     Author     : PC
 --%>
 
+<%@page import="Datos.Horario"%>
 <%@page import="Conexiones.ConexionEstatica"%>
 <%@page import="Datos.Aula"%>
 <%@page import="java.util.LinkedList"%>
@@ -18,22 +19,37 @@
         <link rel="stylesheet" type="text/css" href="css/miestilo.css">
     </head>
     <body>
+        <script>
+            function reservar() {
+                var reservado;
+                 if( document.getElementById("reserva").equals("Libre")) {
+                     reservado = document.getElementById("reserva").value = "Reservado";
+                 } else {
+                     reservado = document.getElementById("reserva"). value = "Libre";
+                 }
+            }
+        </script>
+        
         <%
+            if (request.getParameter("iniciar") != null) {
+                if (request.getParameter("usuario").equals("profesor")) {
 
-            /* Date dNow = new Date();
-            SimpleDateFormat ft = new SimpleDateFormat("MM/dd/yyyy");
-            Date fecha = ft.format(dNow);  */
-            LinkedList<Aula> listaulas = ConexionEstatica.Obteneraulas();
-
+                    LinkedList<Aula> listaulas = ConexionEstatica.Obteneraulas();
+                    LinkedList<Horario> listahoras = ConexionEstatica.Obtenerhoras();
+                    for (int j = 0; j < listahoras.size(); j++) {
+                        Horario h = listahoras.get(j);
+                        h.getComienzo();
+                        h.getFin();
 
         %>
-        <form name="formularioprofesor" action="" method="POST">
+        <form name="formularioprofesor" action="controlador.jsp" method="POST">
             Elija fecha<input type="date" id="fecha" name="fecha" value="" min=""><br>
             Elija aula
+            <br>
             <select>
                 <% for (int i = 0; i < listaulas.size(); i++) {
                 %><option><%listaulas.get(i);%></option><%
-                } 
+                    }
                 %>
             </select>
             <br>
@@ -51,37 +67,42 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>8:30</td>
-                        <td>9:25</td>
-                        <td></td>
+                        <td><%=h.getComienzo()%></td>
+                        <td><%=h.getFin()%></td>
+                        <td><input type="button" name="reserva" value="Libre" onclick="reservar()"></td>
                     </tr>
-                     <tr>
-                        <td>9:25</td>
-                        <td>10:20</td>
-                        <td></td>
+                    <tr>
+                        <td><%=h.getComienzo()%></td>
+                        <td><%=h.getFin()%></td>
+                        <td><input type="button" name="reserva" value="Libre" onclick="reservar()"></td>
                     </tr>
-                     <tr>
-                        <td>10:20</td>
-                        <td>11:15</td>
-                        <td></td>
+                    <tr>
+                        <td><%=h.getComienzo()%></td>
+                        <td><%=h.getFin()%></td>
+                        <td><input type="button" name="reserva" value="Libre" onclick="reservar()"></td>
                     </tr>
-                     <tr>
-                        <td>11:45</td>
-                        <td>12:40</td>
-                        <td></td>
+                    <tr>
+                        <td><%=h.getComienzo()%></td>
+                        <td><%=h.getFin()%></td>
+                        <td><input type="button" name="reserva" value="Libre" onclick="reservar()"></td>
                     </tr>
-                     <tr>
-                        <td>12:40</td>
-                        <td>13:35</td>
-                        <td></td>
+                    <tr>
+                        <td><%=h.getComienzo()%></td>
+                        <td><%=h.getFin()%></td>
+                        <td><input type="button" name="reserva" value="Libre" onclick="reservar()"></td>
                     </tr>
-                     <tr>
-                        <td>13:35</td>
-                        <td>14:30</td>
-                        <td></td>
+                    <tr>
+                        <td><%=h.getComienzo()%></td>
+                        <td><%=h.getFin()%></td>
+                        <td><input type="button" name="reserva" value="Libre" onclick="reservar()"></td>
                     </tr>
                 </tbody>
             </table>
+            <%
+                        }
+                    }
+                }
+            %>
             <br>
             <input type="submit" name="volverindex" value="Volver"><br>
             <input type="submit" name="cerrarsesion" value="Cerrar Sesión"><br>
