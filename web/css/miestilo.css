@@ -25,6 +25,46 @@ form {
   border: 2px double #A8CBEC;
   margin: 30px auto;
   padding: 10px;
+  width: 360px;
+}
+
+form#index label#user {
+  margin-left: 22px;
+}
+
+form#index label, input {
+  margin-top: 10px;
+}
+
+form#registrarse {
+  text-align: left; 
+  display: grid; 
+  grid-template-columns: [col1]100px [col2]260px; 
+  grid-template-rows: repeat(6,32px); 
+}
+form#registrarse label {
+  grid-column: col1;
+  margin-top: 10px;
+}
+fomr#registrarse input[type=text] {
+  grid-column: col2;
+}
+form#registrarse fieldset {
+  grid-column: span 2;
+}
+
+form#registrarse input[type=text] {
+  padding: 1px;
+  margin: 3px;
   width: 260px;
+  box-sizing: border-box;
+}
+form#registrarse input[type=submit] {
+  grid-column: span 2;
+  margin-top: 10px;
+  margin-left: 60px;
+  margin-right: 60px;
   
 }
+
+

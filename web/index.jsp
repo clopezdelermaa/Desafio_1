@@ -14,11 +14,11 @@
     </head>
     <body>
         <div>
-            <form name="indice" action="controlador.jsp" method="POST">
-                <label for="usuario">Usuario</label>
+            <form name="indice" id="index" action="controlador.jsp" method="POST">
+                <label for="usuario" id="user">Usuario</label>
                 <input type="usuario" name="usuario" id="usuario" placeholder="Introduzca su usuario"><br>
                 
-                <label for="pass">Contraseña</label>
+                <label for="pass" id="pass">Contraseña</label>
                 <input type="password" name="passwd" id="passwd" placeholder="Escriba su contraseña"><br>
                 
                 <a href="registro.jsp">Registrarse</a>

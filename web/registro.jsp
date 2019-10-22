@@ -14,9 +14,9 @@
        
     </head>
     <body>
-         <div id="regis">
+         <div>
             <fieldset>
-                <form name="formulario" action="controlador.jsp" method="POST">
+                <form name="formulario" id="registrarse" action="controlador.jsp" method="POST">
                     <label for="usuario">Email </label>
                     <input type="email" name="email" id="usuario" required="" placeholder="Escriba su email"><br>
 
@@ -38,10 +38,15 @@
 
                     </fieldset>
 
-                    <input type="submit" name="aceptaregistro" id="acept" value="Aceptar">
-                    <input type="submit" name="volver" id="volver" value="Volver">
+                    <input type="submit" name="Registrarse" id="regist" value="Registrarse">
+                    <input type="submit" name="volverindex" id="volver" value="Volver">
                 </form>
             </fieldset>
         </div>
+        <%
+            if (request.getParameter("volverindex") !=null ) {
+                response.sendRedirect("index.jsp");
+            }
+            %>
     </body>
 </html>
