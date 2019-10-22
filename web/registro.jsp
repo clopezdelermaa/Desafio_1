@@ -16,7 +16,7 @@
     <body>
          <div>
             <fieldset>
-                <form name="formulario" id="registrarse" action="controlador.jsp" method="POST">
+                <form name="formulario" id="registrarse" action="controladorindex.jsp" method="POST">
                     <label for="usuario">Email </label>
                     <input type="email" name="email" id="usuario" required="" placeholder="Escriba su email"><br>
 
