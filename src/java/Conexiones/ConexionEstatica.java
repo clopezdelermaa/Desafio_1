@@ -9,6 +9,7 @@ import Auxiliar.Constantes;
 import Datos.Aula;
 import Datos.Horario;
 import Datos.Profesor;
+import Datos.Reserva;
 import java.sql.SQLException;
 import java.util.LinkedList;
 import javax.swing.JOptionPane;
@@ -168,7 +169,28 @@ public class ConexionEstatica {
         return listahoras;
     }
     
+    /**
+     * Método para guardar en una LinkedList los datos de las reservas de las aulas
+     * @return 
+     */
     
+    public static LinkedList Obtenerreservas () {
+        LinkedList listareservas = new LinkedList<>();
+        Reserva r;
+        int contres= 0;
+        try {
+            String sentencia = "SELECT cod_Aula, Descripcion, Comienzo, Final, nombre From Aula, Horario, profesores";
+            Conj_registros = Sentencia_sql.executeQuery(sentencia);
+            while (Conj_registros.next()) {
+               r = new Reserva (contres, Conj_registros.getInt("cod_aula"), Conj_registros.getString("Descripcion"),Conj_registros.getString("Comienzo"), Conj_registros.getString("Final"), Conj_registros.getString("nombre"));
+               contres++;
+               listareservas.add(r);
+            }
+        } catch (SQLException e) {
+            
+        }
+        return listareservas;
+    }
     
     //--------MÉTODOS DE INSERCIÓN, MODIFICACION Y BORRADO PROVISIONALES----------
     
