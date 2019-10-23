@@ -45,11 +45,16 @@ public class ConexionEstatica {
             JOptionPane.showMessageDialog(null, ex.getMessage(), "Error al desconectar de la base de datos", JOptionPane.ERROR_MESSAGE);
         }
     }
+    /**
+     * Metodo para comprobar si el usuario existe en la base de datos
+     * @param usuario
+     * @return 
+     */
     
-    public static Profesor Existeusuario (String usuario, String passwd) {
+    public static Profesor Existeusuario (String usuario) {
         Profesor existe = null;
         try {
-            String sentencia = "SELECT * FROM " + Constantes.tablaprofesores + "WHERE usuario='" + usuario + "' AND passwd= '" + passwd + "'"; ;
+            String sentencia = "SELECT * FROM " + Constantes.tablaprofesores + "WHERE usuario='" + usuario + "'"; 
             Conj_registros = Sentencia_sql.executeQuery(sentencia);
             if (Conj_registros.next()) {
                 existe = new Profesor (Conj_registros.getInt("cod_profesor"), Conj_registros.getString("nombre"), Conj_registros.getString("usuario"), Conj_registros.getString("passwd"), Conj_registros.getInt("rol"));
@@ -66,7 +71,7 @@ public class ConexionEstatica {
      * @param passwd
      * @return 
      */
-    public static boolean Existeusuario2 (String usuario, String passwd) {
+    public static boolean Existeusuario2 (String usuario) {
         Profesor existe = null;
         boolean esta = false;
         

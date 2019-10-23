@@ -14,7 +14,7 @@
     </head>
     <body>
         <div>
-            <form name="indice" id="index" action="controlador.jsp" method="POST">
+            <form name="indice" id="index" action="controladorindex.jsp" method="POST">
                 <label for="usuario" id="user">Usuario</label>
                 <input type="usuario" name="usuario" id="usuario" placeholder="Introduzca su usuario"><br>
                 
@@ -24,7 +24,7 @@
                 <a href="registro.jsp">Registrarse</a>
                 <a href="recuperarpasswd.jsp">¿Ha olvidado su contraseña?</a><br>
                 
-                <input type="submit" name="ibnicio" value="Aceptar">
+                <input type="submit" name="inicio" value="Aceptar">
             </form>
         </div>
         
