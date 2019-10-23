@@ -10,10 +10,12 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Login incorrecto</title>
+        <link rel="stylesheet" type="text/css" href="css/miestilo.css">
     </head>
     <body>
-        Login incorrecto
-        <form name="vol" action ="../controladorindex.jsp" method="POST">
+        
+        <form name="vol" action ="../index.jsp" method="POST">
+            <p>Login incorrecto</p>
             <input type="submit" name="volver" value="Volver">
         </form>
     </body>
