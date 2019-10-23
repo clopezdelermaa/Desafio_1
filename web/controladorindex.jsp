@@ -12,15 +12,15 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
     //-----Esto es cuando le das a aceptar en el index
+    
     if (request.getParameter("inicio") != null) {
         ConexionEstatica.nueva();
-        if (ConexionEstatica.Existeusuario2(request.getParameter("usuario"))) {
-            Profesor p = ConexionEstatica.Existeusuario(request.getParameter("usuario"));
+            String usuario = request.getParameter("usuario");
+            Profesor p = ConexionEstatica.Existeusuario(usuario);
             if (p != null) {
-                session.setAttribute("user", p);
-                LinkedList profesores = ConexionEstatica.Obtenerusuarios();
-                ConexionEstatica.cerrarBD();
-                Bitacora.Escribirbitacora("Usuario " + p.getUsuario() + " ha entrado en el sistema");
+                
+                session.setAttribute("user", p.getUsuario());
+                
                 switch (p.getRol()) {
                     case 1:
                         session.setAttribute("admingeneral", p.getUsuario());
@@ -34,8 +34,9 @@
                         session.setAttribute("profesor", p.getUsuario());
                         response.sendRedirect("vistas/profesor.jsp");
                 }
-                session.setAttribute("profesores", profesores);
-            }
+               
+                Bitacora.Escribirbitacora("Usuario " + p.getUsuario() + " ha entrado en el sistema");
+            
 
         } else {
             response.sendRedirect("vistas/incorrecto.jsp");

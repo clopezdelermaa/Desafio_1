@@ -20,6 +20,15 @@ public class Profesor {
     
     //-----------------CONSTRUCTOR-----------------
 
+    public Profesor(int cod_profesor, String nombre, String usuario, String passwd) {
+        this.cod_profesor = cod_profesor;
+        this.nombre = nombre;
+        this.usuario = usuario;
+        this.passwd = passwd;
+    }
+    
+    
+
     public Profesor(int cod_profesor, String nombre, String usuario, String passwd, int rol) {
         this.cod_profesor = cod_profesor;
         this.nombre = nombre;

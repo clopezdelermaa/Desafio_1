@@ -10,6 +10,7 @@ import Datos.Aula;
 import Datos.Horario;
 import Datos.Profesor;
 import Datos.Reserva;
+import Datos.Roles;
 import java.sql.SQLException;
 import java.util.LinkedList;
 import javax.swing.JOptionPane;
@@ -53,11 +54,13 @@ public class ConexionEstatica {
     
     public static Profesor Existeusuario (String usuario) {
         Profesor existe = null;
+        
+ 
         try {
-            String sentencia = "SELECT * FROM " + Constantes.tablaprofesores + "WHERE usuario='" + usuario + "'"; 
+            String sentencia = "SELECT profesores.usuario, RolProfesor.rol FROM profesores, RolProfesor WHERE profesores.usuario='" + usuario + "' AND profesores.cod_profesor=RolProfesor.cod_profesor";
             Conj_registros = Sentencia_sql.executeQuery(sentencia);
             if (Conj_registros.next()) {
-                existe = new Profesor (Conj_registros.getInt("cod_profesor"), Conj_registros.getString("nombre"), Conj_registros.getString("usuario"), Conj_registros.getString("passwd"), Conj_registros.getInt("rol"));
+                existe = new Profesor (Conj_registros.getInt("profesores.cod_profesor"), Conj_registros.getString("profesores.nombre"), Conj_registros.getString("profesores.usuario"), Conj_registros.getString("profesores.passwd"), Conj_registros.getInt("RolProfesor.rol"));
             }
         } catch (SQLException ex) {
             System.out.println("Error al acceder a la base de datos");
@@ -76,7 +79,7 @@ public class ConexionEstatica {
         boolean esta = false;
         
         try {
-             String sentencia = "SELECT * FROM " + Constantes.tablaprofesores + "WHERE usuario='" + usuario + "'";
+             String sentencia = "select profesores.usuario, RolProfesor.rol from profesores, RolProfesor where profesores.usuario='" + usuario + "' and profesores.cod_profesor= RolProfesor.cod_profesor";
             Conj_registros = Sentencia_sql.executeQuery(sentencia);
             if (Conj_registros.next()) {
                 existe = new Profesor (Conj_registros.getInt("cod_profesor"), Conj_registros.getString("nombre"), Conj_registros.getString("usuario"), Conj_registros.getString("passwd"), Conj_registros.getInt("rol"));
@@ -87,6 +90,8 @@ public class ConexionEstatica {
         }
         return esta; // Si el resultado es nulo es que el usuario no está
     }
+    
+     
     
     /**
      * Sirve para añadir todos los usuarios a una LinkedList
@@ -196,6 +201,8 @@ public class ConexionEstatica {
         }
         return listareservas;
     }
+    
+   
     
     //--------MÉTODOS DE INSERCIÓN, MODIFICACION Y BORRADO PROVISIONALES----------
     
