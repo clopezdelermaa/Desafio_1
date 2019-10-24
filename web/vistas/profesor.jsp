@@ -17,8 +17,6 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Profesor</title>
         <link rel="stylesheet" type="text/css" href="../css/miestilo.css">
-    </head>
-    <body>
         <script>
             function reservar() {
                 var reservado;
@@ -29,9 +27,11 @@
                  }
             }
         </script>
-        
+    </head>
+    <body>
+            
         <%
-            if (request.getParameter("iniciar") != null) {
+            if (request.getParameter("inicio") != null) {
                 if (request.getParameter("usuario").equals("profesor")) {
 
                     LinkedList<Aula> listaulas = ConexionEstatica.Obteneraulas();
@@ -104,7 +104,7 @@
                 }
             %>
             <br>
-            <input type="submit" name="volverindex" value="Volver"><br>
+            <a href="../index.jsp"><input type="submit" name="volverindex" value="Volver"></a><br>
             <input type="submit" name="cerrarsesion" value="Cerrar Sesión"><br>
         </form>
     </body>

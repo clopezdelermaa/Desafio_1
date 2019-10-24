@@ -224,20 +224,21 @@ public class ConexionEstatica {
         Sentencia_sql.executeUpdate(sentencia);
     }
 
-    public static void Insertarprofesores(int cod, String nombre, String usuario, String passwd) throws SQLException {
+    public static void Insertarprofesores( int cod, String nombre, String usuario, String passwd) throws SQLException {
 
         String sentencia = "INSERT INTO " + Constantes.tablaprofesores + "VALUES(" + cod + ",'" + nombre + "','" + usuario + "','" + passwd + "')";
         Sentencia_sql.executeQuery(sentencia);
 
     }
+    
 
-    public static void Insertarusuario(String tabla, String email, String nombre, int edad, String passwd, String tipo) throws SQLException {
-        String sentencia = "INSERT INTO " + Constantes.tablaprofesores + " VALUES('" + email + "'," + "'" + nombre + "'," + edad + ", '" + passwd + "'," + "'" + tipo + "')";
-        Sentencia_sql.executeUpdate(sentencia);
+    public static void Insertarrol (int cod_profesor, int rol) throws SQLException {
+        String sentencia = "INSERT INTO `RolProfesor` (`cod_profesor`, `rol`) VALUES (" + cod_profesor + "'," + rol +")";
+        Sentencia_sql.executeQuery(sentencia);
     }
 
     public static void Borrarusuario(String tabla, String email) throws SQLException {
-        String sentencia = "DELETE FROM " + Constantes.tablaprofesores + " WHERE email ='" + email + "'";
+        String sentencia = "DELETE FROM " + Constantes.tablaprofesores + " WHERE  usuario='" + email + "'";
         Sentencia_sql.executeUpdate(sentencia);
     }
 }

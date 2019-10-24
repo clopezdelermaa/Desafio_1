@@ -48,21 +48,17 @@
 
 //-----------------------Cuando el usuario hace el registro----------------------
     if (request.getParameter("Registrarse") != null) {
+        int cod= 0;
+        String usuario = request.getParameter("email");
+        String nombre = request.getParameter("nombre");
+        String passwd = request.getParameter("passwd");
+        if (request.getParameter("passwd").equals(request.getParameter("rpasswd"))) {
+            String codpasswd = Codificar.codifica(passwd);
+        }
+        String rol = request.getParameter("tipo");
         ConexionEstatica.nueva();
-        int cod = 0;
-        String contrase = request.getParameter("passwd");
-        String codcontra = Codificar.codifica(contrase);
-
-        ConexionEstatica.Insertarprofesores(cod, request.getParameter("nombre"), request.getParameter("email"), codcontra);
-        session.setAttribute("listausuarios", ConexionEstatica.Obtenerusuarios());
-        String usuario = (String) (session.getAttribute("usuario"));
-        LinkedList<Profesor> listausuarios = ConexionEstatica.Obtenerusuarios2(usuario);
-        session.setAttribute("usuarios", usuario);
-        /* if (session.getAttribute("origen") != null) {
-            response.sendRedirect("vistas/admingeneral.jsp");
-        } else {
-            response.sendRedirect("index.jsp");
-        } */
+        ConexionEstatica.Insertarprofesores(cod, nombre, usuario, passwd);
+        ConexionEstatica.Insertarrol(cod, Integer.parseInt(rol));
         ConexionEstatica.cerrarBD();
         response.sendRedirect("index.jsp");
     }
