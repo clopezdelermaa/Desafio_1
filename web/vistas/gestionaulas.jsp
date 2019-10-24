@@ -76,6 +76,6 @@
                 }
             }
         %>
-        <a href="index.jsp"><input type="button" name="volver" value="Volver"></a>
+        <a href="../index.jsp"><input type="button" name="volver" value="Volver"></a>
     </body>
 </html>

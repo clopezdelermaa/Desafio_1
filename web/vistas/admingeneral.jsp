@@ -21,11 +21,11 @@
                 <li><a href="#">Gestión de usuarios</a></li>
                 <li><a href="#">Ver Bitácora</a></li>
                 <li>
-                    <a href="#">Gestión de aulas</a>
+                    <a href="#">Aulas</a>
                     <ul>
                         <li><a href="#">Ver cuadrante</a></li>
-                        <li><a href="#">Gestión de aulas</a></li>
-                        <li><a href="#">Gestión de horas</a></li>
+                        <li><a href="gestionaulas.jsp">Gestión de aulas</a></li>
+                        <li><a href="gestionhoras.jsp">Gestión de horas</a></li>
                     </ul>
                 </li>
             </ul>
