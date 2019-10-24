@@ -9,62 +9,101 @@ and open the template in the editor.
 */
 
 *{
-  margin: 0px;
-  padding: 0px;
+    margin: 0px;
+    padding: 0px;
 }
 
 html {
-  background-color: #4F526F;
-  color: white;
-  font-family: fantasy;
-  font-size: 10pt;
-  text-align: center;
+    background-color: #4F526F;
+    color: white;
+    font-family: fantasy;
+    font-size: 10pt;
+    text-align: center;
 }
 form {
-  background-color:#5C8EBE;
-  border: 2px double #A8CBEC;
-  margin: 30px auto;
-  padding: 10px;
-  width: 360px;
+    background-color:#5C8EBE;
+    border: 2px double #A8CBEC;
+    margin: 30px auto;
+    padding: 10px;
+    width: 360px;
 }
 
 form#index label#user {
-  margin-left: 22px;
+    margin-left: 22px;
 }
 
 form#index label, input {
-  margin-top: 10px;
+    margin-top: 10px;
 }
 
 form#registrarse {
-  text-align: left; 
-  display: grid; 
-  grid-template-columns: [col1]100px [col2]260px; 
-  grid-template-rows: repeat(6,32px); 
+    text-align: left; 
+    display: grid; 
+    grid-template-columns: [col1]100px [col2]260px; 
+    grid-template-rows: repeat(6,32px); 
 }
 form#registrarse label {
-  grid-column: col1;
-  margin-top: 10px;
+    grid-column: col1;
+    margin-top: 10px;
 }
 fomr#registrarse input[type=text] {
-  grid-column: col2;
+    grid-column: col2;
 }
 form#registrarse fieldset {
-  grid-column: span 2;
+    grid-column: span 2;
 }
 
 form#registrarse input[type=text] {
-  padding: 1px;
-  margin: 3px;
-  width: 260px;
-  box-sizing: border-box;
+    padding: 1px;
+    margin: 3px;
+    width: 260px;
+    box-sizing: border-box;
 }
 form#registrarse input[type=submit] {
-  grid-column: span 2;
-  margin-top: 10px;
-  margin-left: 60px;
-  margin-right: 60px;
-  
+    grid-column: span 2;
+    margin-top: 10px;
+    margin-left: 60px;
+    margin-right: 60px;
+
 }
 
+table{
+    border-collapse: collapse;
+    font-family: monospace;
+    color: white;
+    line-height: 3em;
+    vertical-align: middle;
+    text-align: center;
+
+    width: 80%;
+    padding: 0px;
+    margin: auto;
+}
+table thead th, table tbody td {
+    border: thin solid aliceblue;
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+    vertical-align: middle;
+    height: 2em;
+}
+
+table thead th{
+    font-family: 'Krona One', sans-serif;
+    color: white;
+    background-color: rgb(44, 62, 80);
+    border: none;
+}
+
+table td {
+    width: 20%;
+}
+
+
+table thead tr th:first-child {
+    border-top-left-radius: 25px;
+}
+table thead tr th:last-child {
+    border-top-right-radius: 25px;
+}
 

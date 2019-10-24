@@ -14,7 +14,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Gestión de aulas</title>
-        <link rel="stylesheet" type="text/css" href="css/miestilo.css">
+        <link rel="stylesheet" type="text/css" href="../css/miestilo.css">
     </head>
     <body>
         <%

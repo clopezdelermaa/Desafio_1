@@ -63,7 +63,7 @@ public class ConexionEstatica {
             if (Conj_registros.next()) {
                 existe = new Profesor(Conj_registros.getInt("profesores.cod_profesor"), Conj_registros.getString("profesores.nombre"), Conj_registros.getString("profesores.usuario"), Conj_registros.getString("profesores.passwd"));
                 if (existe.getRol() == 0) {
-                    String sentencia2 = "SELECT RolProfesor.rol FROM profesores, RolProfesor WHERE profesores.cod_profesor=RolProfesor.cod_profesor";
+                    String sentencia2 = "SELECT RolProfesor.rol FROM profesores, RolProfesor WHERE " + existe.getCod_profesor() +"=RolProfesor.cod_profesor";
                     Conj_registros = Sentencia_sql.executeQuery(sentencia2);
                     while (Conj_registros.next()) {
                         existe.setRol(Conj_registros.getInt("rol"));
