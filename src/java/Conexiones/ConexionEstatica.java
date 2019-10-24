@@ -217,12 +217,8 @@ public class ConexionEstatica {
         }
         return listareservas;
     }
-
-    //--------MÉTODOS DE INSERCIÓN, MODIFICACION Y BORRADO PROVISIONALES----------
-    public static void ModificarDato(String tabla, String email, int nuevaedad) throws SQLException {
-        String sentencia = "UPDATE " + Constantes.tablaprofesores + " SET edad =" + nuevaedad + " WHERE email='" + email + "'";
-        Sentencia_sql.executeUpdate(sentencia);
-    }
+    
+     //--------MÉTODOS DE INSERCIÓN, MODIFICACION Y BORRADO ----------
 
     public static void Insertarprofesores( int cod, String nombre, String usuario, String passwd) throws SQLException {
 
@@ -231,10 +227,16 @@ public class ConexionEstatica {
 
     }
     
-
     public static void Insertarrol (int cod_profesor, int rol) throws SQLException {
         String sentencia = "INSERT INTO `RolProfesor` (`cod_profesor`, `rol`) VALUES (" + cod_profesor + "'," + rol +")";
         Sentencia_sql.executeQuery(sentencia);
+    }
+    
+    
+    //--------MÉTODOS DE INSERCIÓN, MODIFICACION Y BORRADO PROVISIONALES----------
+    public static void ModificarDato(String tabla, String email, int nuevaedad) throws SQLException {
+        String sentencia = "UPDATE " + Constantes.tablaprofesores + " SET edad =" + nuevaedad + " WHERE email='" + email + "'";
+        Sentencia_sql.executeUpdate(sentencia);
     }
 
     public static void Borrarusuario(String tabla, String email) throws SQLException {

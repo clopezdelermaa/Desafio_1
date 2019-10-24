@@ -42,7 +42,7 @@
                         <legend>Tipo de usuario</legend>
                         <input type="radio" name="tipo" value="profesor" checked="">Profesor<br>
                         <input type="radio" name="tipo" value="admingeneral">Administrador general<br>
-                        <input type="radio" name="tipo" value="adminaula">Administrador general<br>
+                        <input type="radio" name="tipo" value="adminaula">Administrador de Aula<br>
 
                     </fieldset>
 
