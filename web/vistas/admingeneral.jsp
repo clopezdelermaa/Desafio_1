@@ -10,8 +10,26 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <link rel="stylesheet" type="text/css" href="../css/miestilo.css">
     </head>
     <body>
-        <h1>Administrador General</h1>
+        <header>
+            <h1>Administrador General</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="#">Gestión de usuarios</a></li>
+                <li><a href="#">Ver Bitácora</a></li>
+                <li>
+                    <a href="#">Gestión de aulas</a>
+                    <ul>
+                        <li><a href="#">Ver cuadrante</a></li>
+                        <li><a href="#">Gestión de aulas</a></li>
+                        <li><a href="#">Gestión de horas</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        
     </body>
 </html>

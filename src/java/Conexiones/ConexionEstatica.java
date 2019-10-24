@@ -220,15 +220,14 @@ public class ConexionEstatica {
     
      //--------MÉTODOS DE INSERCIÓN, MODIFICACION Y BORRADO ----------
 
-    public static void Insertarprofesores( int cod, String nombre, String usuario, String passwd) throws SQLException {
-
-        String sentencia = "INSERT INTO " + Constantes.tablaprofesores + "VALUES(" + cod + ",'" + nombre + "','" + usuario + "','" + passwd + "')";
+    public static void Insertarprofesores( int cod_profesor, String nombre, String usuario, String passwd) throws SQLException {
+        String sentencia = "INSERT INTO " +  Constantes.tablaprofesores + " VALUES (" + cod_profesor + ", '" + nombre + "', '" + usuario + "', '" + passwd + "')";
         Sentencia_sql.executeQuery(sentencia);
 
     }
     
     public static void Insertarrol (int cod_profesor, int rol) throws SQLException {
-        String sentencia = "INSERT INTO `RolProfesor` (`cod_profesor`, `rol`) VALUES (" + cod_profesor + "'," + rol +")";
+        String sentencia = "INSERT INTO" + Constantes.tablarol + " VALUES (" + cod_profesor + "," + rol +")";
         Sentencia_sql.executeQuery(sentencia);
     }
     

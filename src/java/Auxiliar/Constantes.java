@@ -16,6 +16,6 @@ public class Constantes {
     public static String ficherobitacora="bitacoradesafio.txt";
     public static String tablaprofesores="profesores";
     public static String tablaula = "Aula";
-    public static String tablarol = "Roles";
+    public static String tablarol = "RolProfesor";
     
 }

@@ -24,6 +24,7 @@
     <body>
          <div>
             <fieldset>
+                
                 <form name="formulario" id="registrarse" onsubmit="passiguales()" action="controladorindex.jsp" method="POST">
                     <label for="usuario">Email </label>
                     <input type="email" name="email" id="usuario" required="" placeholder="Escriba su email"><br>
@@ -51,10 +52,6 @@
                 </form>
             </fieldset>
         </div>
-        <%
-            if (request.getParameter("volverindex") !=null ) {
-                response.sendRedirect("index.jsp");
-            }
-            %>
+        
     </body>
 </html>
