@@ -52,9 +52,7 @@
         String usuario = request.getParameter("email");
         String nombre = request.getParameter("nombre");
         String passwd = request.getParameter("passwd");
-        if (request.getParameter("passwd").equals(request.getParameter("rpasswd"))) {
-            String codpasswd = Codificar.codifica(passwd);
-        }
+        
         String rol = request.getParameter("tipo");
         ConexionEstatica.nueva();
         ConexionEstatica.Insertarprofesores(cod, nombre, usuario, passwd);

@@ -11,12 +11,20 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
         <link rel="stylesheet" type="text/css" href="css/miestilo.css">
-       
+        <script>
+            function passiguales () {
+                var c1 = document.getElementById("passwd").value;
+                var c2 = document.getElementById("rpasswd").value;
+                if (c1 !== c2) {
+                    alert("Las contraseñas no coinciden");
+                } 
+            }
+        </script>
     </head>
     <body>
          <div>
             <fieldset>
-                <form name="formulario" id="registrarse" action="controladorindex.jsp" method="POST">
+                <form name="formulario" id="registrarse" onsubmit="passiguales()" action="controladorindex.jsp" method="POST">
                     <label for="usuario">Email </label>
                     <input type="email" name="email" id="usuario" required="" placeholder="Escriba su email"><br>
 
@@ -28,7 +36,7 @@
                     <input type="password" name="passwd" id="passwd" required="" placeholder="Escriba su contraseña"><br>
 
                     <label for="rclave">Repite la clave </label>
-                    <input type="password" name="rpasswd" id="rpasswd" required="" placeholder="Repita su contraseña" onblur="comprobarContrasena()"><br>
+                    <input type="password" name="rpasswd" id="rpasswd" required=""  placeholder="Repita su contraseña"><br>
 
                     <fieldset>
                         <legend>Tipo de usuario</legend>
