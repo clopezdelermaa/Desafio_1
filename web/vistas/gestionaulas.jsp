@@ -1,7 +1,7 @@
 <%-- 
     Document   : gestionaulas
     Created on : 21-oct-2019, 12:25:49
-    Author     : daw206
+    Author     : Celia
 --%>
 
 <%@page import="Conexiones.ConexionEstatica"%>

@@ -1,7 +1,8 @@
 <%-- 
     Document   : admingeneral
     Created on : 20-oct-2019, 11:30:06
-    Author     : PC
+    Author     : Celia
+// Pagina que ve el administrador general
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -9,7 +10,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Administrador General</title>
         <link rel="stylesheet" type="text/css" href="../css/miestilo.css">
     </head>
     <body>

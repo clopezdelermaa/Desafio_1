@@ -1,7 +1,8 @@
 <%-- 
     Document   : recuperarpasswd
     Created on : 23-oct-2019, 8:42:36
-    Author     : daw206
+    Author     : Celia
+// Formulario para realizar la recuperación de las contraseñas
 --%>
 
 <%@page import="Email.Passwords"%>

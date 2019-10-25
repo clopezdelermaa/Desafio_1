@@ -1,7 +1,8 @@
 <%-- 
     Document   : gestionhoras
     Created on : 21-oct-2019, 19:24:40
-    Author     : PC
+    Author     : Celia
+//Pantalla de bienvenida para todos los usuarios
 --%>
 
 <%@page import="java.util.LinkedList"%>

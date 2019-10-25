@@ -6,7 +6,7 @@
 package Auxiliar;
 
 /**
- *
+ * Clase con las variables constantes para realizar la conexion a la base de datos
  * @author daw206
  */
 public class Constantes {

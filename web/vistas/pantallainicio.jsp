@@ -1,7 +1,7 @@
 <%-- 
     Document   : pantallainicio
     Created on : 24-oct-2019, 13:23:23
-    Author     : daw206
+    Author     : Celia
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

@@ -17,7 +17,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author daw206
+ * @author Celia
  */
 public class ConexionEstatica {
 
@@ -232,7 +232,7 @@ public class ConexionEstatica {
     }
     
     
-    //--------MÉTODOS DE INSERCIÓN, MODIFICACION Y BORRADO PROVISIONALES----------
+    //--------MÉTODOS DE INSERCIÓN, MODIFICACION Y BORRADO PROVISIONALES (USADOS COMO REFERENCIA) ----------
     public static void ModificarDato(String tabla, String email, int nuevaedad) throws SQLException {
         String sentencia = "UPDATE " + Constantes.tablaprofesores + " SET edad =" + nuevaedad + " WHERE email='" + email + "'";
         Sentencia_sql.executeUpdate(sentencia);

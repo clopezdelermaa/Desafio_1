@@ -15,8 +15,8 @@ import javax.mail.internet.MimeMessage;
 /**
  *
  * @author Celia
- * @since 18/10/2019 Creación de la clase de email para usarla para la
- * recuperación de contraseñas
+ * @since 18/10/2019 
+ * Creación de la clase de email para usarla para la recuperación de contraseñas
  */
 public class Email {
 

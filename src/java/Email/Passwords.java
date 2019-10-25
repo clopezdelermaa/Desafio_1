@@ -7,7 +7,9 @@ package Email;
 
 /**
  *
- * @author daw206
+ * @author Celia
+ * @since 22/10/2019 
+ * Clase Password para el cifrado de las contraseñas
  */
 public class Passwords {
     

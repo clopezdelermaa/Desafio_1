@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author daw206
+ * @author Celia
  */
 public class Conexion {
     private java.sql.Connection Conex;

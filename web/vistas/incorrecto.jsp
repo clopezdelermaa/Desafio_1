@@ -2,6 +2,7 @@
     Document   : incorrecto
     Created on : 23-oct-2019, 9:40:37
     Author     : Celia
+//Pantalla de cuando el usuario inicia sesión de modo incorrecto
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

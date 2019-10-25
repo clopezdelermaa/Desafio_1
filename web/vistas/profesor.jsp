@@ -1,7 +1,7 @@
 <%-- 
     Document   : profesor
     Created on : 20-oct-2019, 11:30:34
-    Author     : PC
+    Author     : Celia
 --%>
 
 <%@page import="Datos.Horario"%>

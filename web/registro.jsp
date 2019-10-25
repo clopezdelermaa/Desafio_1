@@ -1,7 +1,8 @@
 <%-- 
     Document   : registro
     Created on : 21-oct-2019, 13:00:28
-    Author     : daw206
+    Author     : Celia
+// Formulario de registro del usuario
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

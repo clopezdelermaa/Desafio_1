@@ -8,7 +8,7 @@ package Auxiliar;
 import org.apache.commons.codec.digest.DigestUtils;
 
 /**
- *Clase para conseguir que las contraseñas no aparezcan en texto plano, sino que estén codificadas
+ * Clase para conseguir que las contraseñas no aparezcan en texto plano, sino que estén codificadas
  * @author Celia
  */
 public class Codificar {
