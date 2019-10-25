@@ -4,6 +4,7 @@
     Author     : Celia
 --%>
 
+<%@page import="Datos.Aula"%>
 <%@page import="Auxiliar.Codificar"%>
 <%@page import="Auxiliar.Bitacora"%>
 <%@page import="java.util.LinkedList"%>
@@ -75,6 +76,14 @@
     if (request.getParameter("volverindex") != null) {
         response.sendRedirect("index.jsp");
     }
+
+//----------------------------------Pasar las aulas en la sesion ------------------------
+
+    
+    ConexionEstatica.nueva();
+    LinkedList<Aula> listaula = ConexionEstatica.Obteneraulas();
+    session.setAttribute("listaula", listaula);
+    ConexionEstatica.cerrarBD();
 
 
 %>

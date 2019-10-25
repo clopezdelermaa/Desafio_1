@@ -10,7 +10,7 @@ and open the template in the editor.
 
 *{
     margin: 0px;
-    padding: 0px;
+   
 }
 
 html {
@@ -75,9 +75,10 @@ table{
     vertical-align: middle;
     text-align: center;
 
-    width: 80%;
+    width: 40%;
     padding: 0px;
     margin: auto;
+    margin-top: 10px;
 }
 table thead th, table tbody td {
     border: thin solid aliceblue;
@@ -87,7 +88,10 @@ table thead th, table tbody td {
     vertical-align: middle;
     height: 2em;
 }
-
+table td input[type=button] {
+   font-size: 11pt;
+    
+}
 table thead th{
     font-family: 'Krona One', sans-serif;
     color: white;
@@ -97,8 +101,11 @@ table thead th{
 
 table td {
     width: 20%;
+    background-color: #5C8EBE;
 }
-
+table tbody td input[type=text] {
+    width: 100px;
+}
 
 table thead tr th:first-child {
     border-top-left-radius: 25px;

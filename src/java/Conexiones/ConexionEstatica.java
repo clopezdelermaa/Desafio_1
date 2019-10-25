@@ -159,7 +159,7 @@ public class ConexionEstatica {
         LinkedList listaulas = new LinkedList<>();
         Aula a;
         try {
-            String sentencia = "SELECT * FROM aulas";
+            String sentencia = "SELECT * FROM Aula";
             Conj_registros = Sentencia_sql.executeQuery(sentencia);
             while (Conj_registros.next()) {
                 a = new Aula(Conj_registros.getInt("cod_aula"), Conj_registros.getString("Descripcion"));

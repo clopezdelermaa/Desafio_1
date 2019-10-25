@@ -15,6 +15,8 @@
     <body>
         <form name="inicio" action="">
             <h1>Bienvenido</h1>
+            
+                <h2><%session.getAttribute("usuario");%></h2>
             <input type="submit" name="continuar" value="Continuar">
         </form>
     </body>
