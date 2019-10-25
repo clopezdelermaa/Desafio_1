@@ -16,8 +16,15 @@
         <title>Gestión de aulas</title>
         <link rel="stylesheet" type="text/css" href="../css/miestilo.css">
         <script>
-            function nuevaaula () {
-                
+            function nuevaaula() {
+                var nuevaclase = "<td><input type='text' name='aula' value=''></td><td><input type='text' name='descripcion' value=''></td> <td><input type='button' name='editar' value='Editar'></td><td><input type='button' name='borrar' value='Borrar'></td>";
+                document.getElementById("clase").innerHTML += nuevaclase;
+
+
+
+
+
+
             }
         </script>
     </head>
@@ -26,7 +33,7 @@
         <h1>Gestión de aulas</h1>
         <br>
 
-        
+
         <table>
             <thead>
                 <tr>
@@ -35,27 +42,28 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
+                <tr id="clase">
                     <%
-                    LinkedList<Aula> listaula = (LinkedList<Aula>) session.getAttribute("listaula");
+                        LinkedList<Aula> listaula = (LinkedList<Aula>) session.getAttribute("listaula");
 
-                    for (int i = 0; i < listaula.size(); i++) {
-                        Aula a = listaula.get(i);
+                        for (int i = 0; i < listaula.size(); i++) {
+                            Aula a = listaula.get(i);
 
                     %>
-                    <td><input type="text" name="aula1" value="<%=a.getCod_Aula()%>"></td>
-                    <td><input type="text" name="descripcion1" value="<%=a.getDescripcion()%>"></td>
+                    <td><input type="text" name="aula" value="<%=a.getCod_Aula()%>"></td>
+                    <td><input type="text" name="descripcion" value="<%=a.getDescripcion()%>"></td>
                     <td><input type="button" name="editar" value="Editar"></td>
                     <td><input type="button" name="borrar" value="Borrar"></td>
-                </tr>
-                <%
-                    }
-                %>
-            </tbody>
-            
+           
+            </tr>
+            <%
+                }
+            %>
+            </tbody>  
+            <input type="button" name="add" value="Añadir Aula" onclick="nuevaaula();"> 
         </table>
 
 
-        <a href="../index.jsp"><input type="button" name="volver" value="Volver"></a>
+        <a href="admingeneral.jsp"><input type="button" name="volver" value="Volver"></a>
     </body>
 </html>

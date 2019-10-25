@@ -13,13 +13,20 @@
         <link rel="stylesheet" type="text/css" href="../css/miestilo.css">
     </head>
     <body>
-        <form name="adminaula" action="" method="POST">
-            <a href="cuadrante.jsp"><input type="button" name="cuadrante" value="Ver cuadrante"></a>
-            <br>
-            <a href="gestionaulas.jsp"><input type="button" name="gestionaula" value="Gestionar aulas"></a>
-            <br>
-            <a href="gestionarhorario.jsp"><input type="button" name="gestionhorario" value="Gestionar Franjas Horarias"></a>
-            <br>
-        </form>
+        <header>
+            <h1>Administrador General</h1>
+        </header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#">Aulas</a>
+                    <ul>
+                        <li><a href="#">Ver cuadrante</a></li>
+                        <li><a href="gestionaulas.jsp">Gestión de aulas</a></li>
+                        <li><a href="gestionhoras.jsp">Gestión de horas</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
     </body>
 </html>

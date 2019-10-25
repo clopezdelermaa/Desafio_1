@@ -4,6 +4,7 @@
     Author     : Celia
 --%>
 
+<%@page import="Datos.Horario"%>
 <%@page import="Datos.Aula"%>
 <%@page import="Auxiliar.Codificar"%>
 <%@page import="Auxiliar.Bitacora"%>
@@ -77,7 +78,7 @@
         response.sendRedirect("index.jsp");
     }
 
-//----------------------------------Pasar las aulas en la sesion ------------------------
+//----------------------------------Para guardar las aulas en la sesión ------------------------
 
     
     ConexionEstatica.nueva();
@@ -85,5 +86,13 @@
     session.setAttribute("listaula", listaula);
     ConexionEstatica.cerrarBD();
 
+//-----------------------------------Para guardar las horas en la sesión------------------------
 
+    ConexionEstatica.nueva();
+    LinkedList<Horario> listahoras = ConexionEstatica.Obtenerhoras();
+    session.setAttribute("listahoras", listahoras);
+    ConexionEstatica.cerrarBD();
+    
+
+    
 %>

@@ -17,5 +17,6 @@ public class Constantes {
     public static String tablaprofesores="profesores";
     public static String tablaula = "Aula";
     public static String tablarol = "RolProfesor";
+    public static String tablahorario = "Horario";
     
 }

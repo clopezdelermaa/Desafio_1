@@ -84,14 +84,16 @@ table thead th, table tbody td {
     border: thin solid aliceblue;
     padding: 0px;
     margin: 0px;
-    text-align: center;
+    
     vertical-align: middle;
     height: 2em;
 }
 table td input[type=button] {
    font-size: 11pt;
+    text-align: center;
     
 }
+
 table thead th{
     font-family: 'Krona One', sans-serif;
     color: white;
@@ -103,8 +105,16 @@ table td {
     width: 20%;
     background-color: #5C8EBE;
 }
+table#horario {
+    width: 25%;
+}
+table#horario input[type=text] {
+    width: 35px;
+    text-align: center;
+}
 table tbody td input[type=text] {
     width: 100px;
+    text-align: center;
 }
 
 table thead tr th:first-child {

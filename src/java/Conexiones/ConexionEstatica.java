@@ -117,7 +117,7 @@ public class ConexionEstatica {
             String sentencia = "SELECT * FROM profesores";
             Conj_registros = Sentencia_sql.executeQuery(sentencia);
             while (Conj_registros.next()) {
-                p = new Profesor(Conj_registros.getInt("cod_profesor"), Conj_registros.getString("nombre"), Conj_registros.getString("usuario"), Conj_registros.getString("passwd"), Conj_registros.getInt("rol"));
+                p = new Profesor(Conj_registros.getInt("cod_profesor"), Conj_registros.getString("nombre"), Conj_registros.getString("usuario"), Conj_registros.getString("passwd"));
                 listausuarios.add(p);
             }
         } catch (SQLException ex) {
@@ -130,6 +130,7 @@ public class ConexionEstatica {
      * Sirve para meter los usuarios mediante su direccion de correo (en la base
      * de datos es el campo usuario)
      *
+     * @param usuario
      * @return lista de usuarios hecha por LinkedList
      */
     public static LinkedList Obtenerusuarios2(String usuario) {
@@ -229,6 +230,11 @@ public class ConexionEstatica {
     public static void Insertarrol (int cod_profesor, int rol) throws SQLException {
         String sentencia = "INSERT INTO" + Constantes.tablarol + " VALUES (" + cod_profesor + "," + rol +")";
         Sentencia_sql.executeQuery(sentencia);
+    }
+    
+    public static void Insertarhora (int numero, String comienzo, String fin) throws SQLException {
+       String sentencia = "INSERT INTO " + Constantes.tablahorario + " VALUES (" + numero +", '" + comienzo + "', '" + fin+ "')"; 
+       Sentencia_sql.executeQuery(sentencia);
     }
     
     
