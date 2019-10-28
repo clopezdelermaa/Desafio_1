@@ -94,5 +94,12 @@
     ConexionEstatica.cerrarBD();
     
 
+//----------------------------------------
+    ConexionEstatica.nueva();
+    LinkedList<Aula> listaulas = ConexionEstatica.Obteneraulas();
+    LinkedList<Horario> listahora = ConexionEstatica.Obtenerhoras();
+    session.setAttribute("listahoras", listahora);
+    session.setAttribute("listaaulas", listaulas);
+
     
 %>

@@ -20,43 +20,41 @@
         <script>
             function reservar() {
                 var reservado;
-                 if( document.getElementById("reserva").equals("Libre")) {
-                     reservado = document.getElementById("reserva").value = "Reservado";
-                 } else {
-                     reservado = document.getElementById("reserva"). value = "Libre";
-                 }
+                if (document.getElementById("reserva").equals("Libre")) {
+                    reservado = document.getElementById("reserva").value = "Reservado";
+                } else {
+                    reservado = document.getElementById("reserva").value = "Libre";
+                }
             }
         </script>
     </head>
     <body>
-            
-        <%
-            if (request.getParameter("inicio") != null) {
-                if (request.getParameter("usuario").equals("profesor")) {
 
-                    LinkedList<Aula> listaulas = ConexionEstatica.Obteneraulas();
-                    LinkedList<Horario> listahoras = ConexionEstatica.Obtenerhoras();
-                    for (int j = 0; j < listahoras.size(); j++) {
-                        Horario h = listahoras.get(j);
-                        h.getComienzo();
-                        h.getFin();
 
-        %>
+
+
         <form name="formularioprofesor" action="controlador.jsp" method="POST">
             Elija fecha<input type="date" id="fecha" name="fecha" value="" min=""><br>
             Elija aula
             <br>
+            <%
+                LinkedList<Aula> listaula = (LinkedList<Aula>) session.getAttribute("listaaulas");
+                LinkedList<Horario> listahora = (LinkedList<Horario>) session.getAttribute("listahoras");
+            %>
             <select>
-                <% for (int i = 0; i < listaulas.size(); i++) {
-                %><option><%listaulas.get(i);%></option><%
-                    }
+                <% for (int i = 0; i < listaula.size(); i++) {
+                        for (int c = 0; c < listahora.size(); c++) {
+                            Aula a = listaula.get(i);
+                            Horario h = listahora.get(c);
+
+                %><option><%listaula.get(i);%></option><%
+
                 %>
             </select>
             <br>
             <h4>FECHA</h4>
             <h4>AULA</h4>
-            <br>
-            <br>
+            
             <table>
                 <thead>
                     <tr>
@@ -71,37 +69,14 @@
                         <td><%=h.getFin()%></td>
                         <td><input type="button" name="reserva" value="Libre" onclick="reservar()"></td>
                     </tr>
-                    <tr>
-                        <td><%=h.getComienzo()%></td>
-                        <td><%=h.getFin()%></td>
-                        <td><input type="button" name="reserva" value="Libre" onclick="reservar()"></td>
-                    </tr>
-                    <tr>
-                        <td><%=h.getComienzo()%></td>
-                        <td><%=h.getFin()%></td>
-                        <td><input type="button" name="reserva" value="Libre" onclick="reservar()"></td>
-                    </tr>
-                    <tr>
-                        <td><%=h.getComienzo()%></td>
-                        <td><%=h.getFin()%></td>
-                        <td><input type="button" name="reserva" value="Libre" onclick="reservar()"></td>
-                    </tr>
-                    <tr>
-                        <td><%=h.getComienzo()%></td>
-                        <td><%=h.getFin()%></td>
-                        <td><input type="button" name="reserva" value="Libre" onclick="reservar()"></td>
-                    </tr>
-                    <tr>
-                        <td><%=h.getComienzo()%></td>
-                        <td><%=h.getFin()%></td>
-                        <td><input type="button" name="reserva" value="Libre" onclick="reservar()"></td>
-                    </tr>
+
                 </tbody>
             </table>
-            <%
-                        }
+            <% }
                     }
-                }
+                
+            
+
             %>
             <br>
             <a href="../index.jsp"><input type="submit" name="volverindex" value="Volver"></a><br>
