@@ -19,7 +19,7 @@
         </header>
         <nav>
             <ul>
-                <li><a href="#">Gestión de usuarios</a></li>
+                <li><a href="gestionusuarios.jsp">Gestión de usuarios</a></li>
                 <li><a href="#">Ver Bitácora</a></li>
                 <li>
                     <a href="#">Aulas</a>

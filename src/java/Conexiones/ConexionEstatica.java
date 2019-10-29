@@ -237,6 +237,10 @@ public class ConexionEstatica {
        Sentencia_sql.executeQuery(sentencia);
     }
     
+    public static void Insertaraula (int cod_aula, String Descripcion) throws SQLException {
+        String sentencia ="INSERT INTO " + Constantes.tablaula + " VALUES (" + cod_aula + ", '" + Descripcion + "')";
+        Sentencia_sql.executeQuery(sentencia);
+    }
     
     //--------MÉTODOS DE INSERCIÓN, MODIFICACION Y BORRADO PROVISIONALES (USADOS COMO REFERENCIA) ----------
     public static void ModificarDato(String tabla, String email, int nuevaedad) throws SQLException {

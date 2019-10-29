@@ -62,6 +62,21 @@
         </table>
             <input type="button" name="add" value="Añadir Aula" onclick="nuevaaula();"> 
 
+            <% 
+                if (request.getParameter("add") !=null) {
+                    ConexionEstatica.nueva();
+                    int cod_aula = Integer.parseInt(request.getParameter("aula"));
+                    String descripcion = request.getParameter("descripcion");
+                    ConexionEstatica.Insertaraula(cod_aula, descripcion);         
+                }
+                
+                if (request.getParameter("editar") != null) {
+                    ConexionEstatica.nueva();
+                    
+                }
+                %>
         <a href="admingeneral.jsp"><input type="button" name="volver" value="Volver"></a>
+        
+        <a href="../index.jsp"><input type="submit" name="cerrarsesion" value="Cerrar Sesión"></a><br>
     </body>
 </html>

@@ -177,4 +177,24 @@ nav ul li:hover > ul {
     z-index: 100;
     transition: all 500ms 500ms linear;
 }
-
+table#reservaclase {
+    width: 300px;
+}
+select#au {
+    width: 70px;
+}
+form#crud {
+    width: 800px;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+form#crud input {
+    width: 180px;
+}
+form#crud button {
+    width: 80px;
+    height: 43px;
+    margin-top: 10px;
+    
+}

@@ -16,6 +16,13 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Gestión de horarios</title>
         <link rel="stylesheet" type="text/css" href="../css/miestilo.css">
+        <script>
+            function nuevahora() {
+                var nuevahora = "<tr><td><input type='text' name='hora' value=''></td><td><input type='text' name='comienzo' value=''></td><td><input type='text' name='final' value=''></td><td><input type='button' name='reservar' value='Reservar'></td></tr>";
+                document.getElementById("horas").innerHTML += nuevahora;
+                        
+            }
+        </script>
     </head>
     <body>
         <br>
@@ -32,7 +39,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
+                <tr id="horas">
                     <%
                         LinkedList<Horario> listahoras = (LinkedList<Horario>) session.getAttribute("listahoras");
 
@@ -51,5 +58,6 @@
         </table>
 
         <a href="admingeneral.jsp"><input type="button" name="volver" value="Volver"></a>
+        <a href="../index.jsp"><input type="submit" name="cerrarsesion" value="Cerrar Sesión"><br>
     </body>
 </html>

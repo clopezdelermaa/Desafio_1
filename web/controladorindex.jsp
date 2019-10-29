@@ -94,12 +94,26 @@
     ConexionEstatica.cerrarBD();
     
 
-//----------------------------------------
+//----------------------------------------Para guardar las aulas y las horas en la sesión------------------
     ConexionEstatica.nueva();
     LinkedList<Aula> listaulas = ConexionEstatica.Obteneraulas();
     LinkedList<Horario> listahora = ConexionEstatica.Obtenerhoras();
     session.setAttribute("listahoras", listahora);
     session.setAttribute("listaaulas", listaulas);
-
+    ConexionEstatica.cerrarBD();
     
+
+//--------------------------------Cuando el usuario pulsa cerrar sesión------------
+
+    if (request.getParameter("cerrarsesion") != null) {
+        session.invalidate();
+        response.sendRedirect("index.jsp");
+    }
+    
+//---------------------------------Para obtener todos los usuarios registrados--------------
+
+    ConexionEstatica.nueva();
+    LinkedList<Profesor> listausuarios = ConexionEstatica.Obtenerusuarios();
+    session.setAttribute("listausuarios", listausuarios);
+    ConexionEstatica.cerrarBD();
 %>
