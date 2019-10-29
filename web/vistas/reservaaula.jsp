@@ -4,6 +4,9 @@
     Author     : Celia
 --%>
 
+<%@page import="Auxiliar.Bitacora"%>
+<%@page import="Datos.Profesor"%>
+<%@page import="Datos.Reserva"%>
 <%@page import="Datos.Horario"%>
 <%@page import="Conexiones.ConexionEstatica"%>
 <%@page import="Datos.Aula"%>
@@ -17,16 +20,6 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Profesor</title>
         <link rel="stylesheet" type="text/css" href="../css/miestilo.css">
-        <script>
-            function reservar() {
-                var reservado;
-                if (document.getElementById("reserva").equals("Libre")) {
-                    reservado = document.getElementById("reserva").value = "Reservado";
-                } else {
-                    reservado = document.getElementById("reserva").value = "Libre";
-                }
-            }
-        </script>
     </head>
     <body>
 
@@ -46,8 +39,8 @@
 
                         Aula a = listaulas.get(i);
 
-                %><option><%a.getCod_Aula();%></option><%
-                    }
+                %><option><%=a.getCod_Aula()%></option><%
+
                 %>
             </select>
             <br>
@@ -57,7 +50,7 @@
             <h3>AULA</h3>
 
             <table id="reservaclase">
-  
+
                 <thead>
                     <tr>
                         <th>HORA COMIENZO</th>
@@ -66,16 +59,42 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <%
-                        for (int c = 0; c < listahora.size(); c++) {
+                    <%      for (int c = 0; c < listahora.size(); c++) {
                             Horario h = listahora.get(c);
                     %>
                     <tr>
                         <td><%=h.getComienzo()%></td>
                         <td><%=h.getFin()%></td>
-                        <td><input type="button" name="reserva" value="Libre" onclick="reservar()"></td>
+                        <td><input type="button" name="reserva" value="Libre"></td>
                     </tr>
-                    <% }
+                    <%
+
+                                LinkedList<Reserva> listareserva = new LinkedList();
+                               
+                                if (request.getParameter("reserva") != null && request.getParameter("reserva").equals("Libre")) {
+                                    if (listareserva.isEmpty()) {
+                                        
+                                         listareserva = new LinkedList();
+                                    } else {
+                                        listareserva = ConexionEstatica.Obtenerreservas();
+                                        java.sql.Date fecha = java.sql.Date.valueOf(request.getParameter("fecha"));
+                                        int aula = a.getCod_Aula();
+                                        String descripcion = a.getDescripcion();
+                                        String comienzo = h.getComienzo();
+                                        String fin = h.getFin();
+                                        String profesor = session.getAttribute("user").toString();
+                                        int cod_reserva = listareserva.size() + 1;
+                                        Reserva r = new Reserva (cod_reserva, aula, descripcion, comienzo, fin, fecha, profesor);
+                                        listareserva.add(r);
+                                        Bitacora.Escribirbitacora("El usuario " + session.getAttribute("user").toString() + " ha reservado el aula " + aula + " en las horas " + comienzo + ", " + fin + "\r\n");
+                                    }
+                                    %>
+                                    <input type="button" name="reserva" value="Reservado">
+                                    <%
+                                    session.setAttribute("listareservas", listareserva);
+                                }
+                            }
+                        }
 
                     %>
                 </tbody>

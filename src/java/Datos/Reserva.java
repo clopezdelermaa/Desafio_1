@@ -5,6 +5,8 @@
  */
 package Datos;
 
+import java.sql.Date;
+
 /**
  *Creación de la clase reserva para luego almacenar los datos mas tarde
  * @author Celia
@@ -16,9 +18,20 @@ public class Reserva {
   private String Descripcion;
   private String Comienzo;
   private String Fin;
+  private Date Fecha;
   private String Profesor;
   
   //---------------------------CONSTRUCTOR----------------------
+
+    public Reserva(int cod_reserva, int cod_Aula, String Descripcion, String Comienzo, String Fin, Date Fecha, String Profesor) {
+        this.cod_reserva = cod_reserva;
+        this.cod_Aula = cod_Aula;
+        this.Descripcion = Descripcion;
+        this.Comienzo = Comienzo;
+        this.Fin = Fin;
+        this.Fecha = Fecha;
+        this.Profesor = Profesor;
+    }
 
     public Reserva(int cod_reserva, int cod_Aula, String Descripcion, String Comienzo, String Fin, String Profesor) {
         this.cod_reserva = cod_reserva;
@@ -30,14 +43,14 @@ public class Reserva {
     }
 
     
+    
+     //--------------------------GETTER Y SETTER------------------------
   
     public int getCod_reserva() {
         return cod_reserva;
     }
 
-    //--------------------------GETTER Y SETTER------------------------
-    
-    
+
     public void setCod_reserva(int cod_reserva) {
         this.cod_reserva = cod_reserva;
     }
@@ -74,6 +87,17 @@ public class Reserva {
         this.Fin = Fin;
     }
 
+    public Date getFecha() {
+        return Fecha;
+    }
+
+    public void setFecha(Date Fecha) {
+        this.Fecha = Fecha;
+    }
+
+    
+    
+
     public String getProfesor() {
         return Profesor;
     }
@@ -86,9 +110,10 @@ public class Reserva {
 
     @Override
     public String toString() {
-        return "Reserva{" + "cod_Aula=" + cod_Aula + ", Descripcion=" + Descripcion + ", Comienzo=" + Comienzo + ", Fin=" + Fin + ", Profesor=" + Profesor + '}';
+        return "Reserva{" + "cod_reserva=" + cod_reserva + ", cod_Aula=" + cod_Aula + ", Descripcion=" + Descripcion + ", Comienzo=" + Comienzo + ", Fin=" + Fin + ", Fecha=" + Fecha + ", Profesor=" + Profesor + '}';
     }
-    
+
+   
     
   
 }

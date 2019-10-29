@@ -219,7 +219,7 @@ public class ConexionEstatica {
         return listareservas;
     }
     
-     //--------MÉTODOS DE INSERCIÓN, MODIFICACION Y BORRADO ----------
+     //--------MÉTODOS DE INSERCIÓN ----------
 
     public static void Insertarprofesores( int cod_profesor, String nombre, String usuario, String passwd) throws SQLException {
         String sentencia = "INSERT INTO " +  Constantes.tablaprofesores + " VALUES (" + cod_profesor + ", '" + nombre + "', '" + usuario + "', '" + passwd + "')";
@@ -241,6 +241,9 @@ public class ConexionEstatica {
         String sentencia ="INSERT INTO " + Constantes.tablaula + " VALUES (" + cod_aula + ", '" + Descripcion + "')";
         Sentencia_sql.executeQuery(sentencia);
     }
+    
+    //--------------------------- MÉTODOS DE MODIFICACION DE TABLAS -----------------
+    
     
     //--------MÉTODOS DE INSERCIÓN, MODIFICACION Y BORRADO PROVISIONALES (USADOS COMO REFERENCIA) ----------
     public static void ModificarDato(String tabla, String email, int nuevaedad) throws SQLException {
