@@ -63,11 +63,11 @@ public class ConexionEstatica {
             if (Conj_registros.next()) {
                 existe = new Profesor(Conj_registros.getInt("profesores.cod_profesor"), Conj_registros.getString("profesores.nombre"), Conj_registros.getString("profesores.usuario"), Conj_registros.getString("profesores.passwd"));
                 if (existe.getRol() == 0) {
-                    String sentencia2 = "SELECT RolProfesor.rol FROM profesores, RolProfesor WHERE " + existe.getCod_profesor() +"=RolProfesor.cod_profesor";
+                    String sentencia2 = "SELECT RolProfesor.rol FROM profesores, RolProfesor WHERE " + existe.getCod_profesor() + "=RolProfesor.cod_profesor";
                     Conj_registros = Sentencia_sql.executeQuery(sentencia2);
                     while (Conj_registros.next()) {
                         existe.setRol(Conj_registros.getInt("rol"));
-                      
+
                     }
 
                 }
@@ -218,33 +218,29 @@ public class ConexionEstatica {
         }
         return listareservas;
     }
-    
-     //--------MÉTODOS DE INSERCIÓN ----------
 
-    public static void Insertarprofesores( int cod_profesor, String nombre, String usuario, String passwd) throws SQLException {
-        String sentencia = "INSERT INTO " +  Constantes.tablaprofesores + " VALUES (" + cod_profesor + ", '" + nombre + "', '" + usuario + "', '" + passwd + "')";
-        Sentencia_sql.executeQuery(sentencia);
+    //--------MÉTODOS DE INSERCIÓN ----------
+    public static void Insertarprofesores(int cod, String nombre, String usuario, String passwd) throws SQLException {      
+            String sentencia = "INSERT INTO " + Constantes.tablaprofesores + " (`cod_profesor`, `nombre`, `usuario`, `passwd`) VALUES (" + cod + ", '" + nombre + "', '" + usuario + "', '" + passwd + "')";
+            Sentencia_sql.executeQuery(sentencia);
+    }
 
-    }
-    
-    public static void Insertarrol (int cod_profesor, int rol) throws SQLException {
-        String sentencia = "INSERT INTO" + Constantes.tablarol + " VALUES (" + cod_profesor + "," + rol +")";
+    public static void Insertarrol(int cod_profesor, int rol) throws SQLException {
+        String sentencia = "INSERT INTO " + Constantes.tablarol + " VALUES (" + cod_profesor + "," + rol + ")";
         Sentencia_sql.executeQuery(sentencia);
     }
-    
-    public static void Insertarhora (int numero, String comienzo, String fin) throws SQLException {
-       String sentencia = "INSERT INTO " + Constantes.tablahorario + " VALUES (" + numero +", '" + comienzo + "', '" + fin+ "')"; 
-       Sentencia_sql.executeQuery(sentencia);
-    }
-    
-    public static void Insertaraula (int cod_aula, String Descripcion) throws SQLException {
-        String sentencia ="INSERT INTO " + Constantes.tablaula + " VALUES (" + cod_aula + ", '" + Descripcion + "')";
+
+    public static void Insertarhora(int numero, String comienzo, String fin) throws SQLException {
+        String sentencia = "INSERT INTO " + Constantes.tablahorario + " VALUES (" + numero + ", '" + comienzo + "', '" + fin + "')";
         Sentencia_sql.executeQuery(sentencia);
     }
-    
+
+    public static void Insertaraula(int cod_aula, String Descripcion) throws SQLException {
+        String sentencia = "INSERT INTO " + Constantes.tablaula + " VALUES (" + cod_aula + ", '" + Descripcion + "')";
+        Sentencia_sql.executeQuery(sentencia);
+    }
+
     //--------------------------- MÉTODOS DE MODIFICACION DE TABLAS -----------------
-    
-    
     //--------MÉTODOS DE INSERCIÓN, MODIFICACION Y BORRADO PROVISIONALES (USADOS COMO REFERENCIA) ----------
     public static void ModificarDato(String tabla, String email, int nuevaedad) throws SQLException {
         String sentencia = "UPDATE " + Constantes.tablaprofesores + " SET edad =" + nuevaedad + " WHERE email='" + email + "'";

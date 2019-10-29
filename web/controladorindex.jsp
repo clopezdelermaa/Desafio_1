@@ -49,7 +49,9 @@
 
 //-----------------------Cuando el usuario hace el registro----------------------
     if (request.getParameter("Registrarse") != null) {
-        int cod = 0;
+        ConexionEstatica.nueva();
+        LinkedList<Profesor> listausuarios = ConexionEstatica.Obtenerusuarios();
+        int cod_profesor = listausuarios.size() + 1;
         String usuario = request.getParameter("email");
         String nombre = request.getParameter("nombre");
         String passwd = request.getParameter("passwd");
@@ -66,9 +68,9 @@
             rol = 3;
         }
 
-        ConexionEstatica.nueva();
-        ConexionEstatica.Insertarprofesores(cod, nombre, usuario, passwd);
-        ConexionEstatica.Insertarrol(cod, rol);
+        
+        ConexionEstatica.Insertarprofesores(cod_profesor, nombre, usuario, passwd);
+        ConexionEstatica.Insertarrol(cod_profesor, rol);
         ConexionEstatica.cerrarBD();
         response.sendRedirect("index.jsp");
     }

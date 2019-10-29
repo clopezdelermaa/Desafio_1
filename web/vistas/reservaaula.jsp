@@ -18,7 +18,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Profesor</title>
+        <title>Reserva de aula</title>
         <link rel="stylesheet" type="text/css" href="../css/miestilo.css">
     </head>
     <body>
@@ -67,7 +67,9 @@
                         <td><%=h.getFin()%></td>
                         <td><input type="button" name="reserva" value="Libre"></td>
                     </tr>
-                    <%
+                    
+                </tbody>
+                <%
 
                                 LinkedList<Reserva> listareserva = new LinkedList();
                                
@@ -97,7 +99,6 @@
                         }
 
                     %>
-                </tbody>
             </table>
 
             <br>
