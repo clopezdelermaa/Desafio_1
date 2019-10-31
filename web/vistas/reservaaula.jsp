@@ -67,38 +67,38 @@
                         <td><%=h.getFin()%></td>
                         <td><input type="button" name="reserva" value="Libre"></td>
                     </tr>
-                    
+
                 </tbody>
                 <%
 
-                                LinkedList<Reserva> listareserva = new LinkedList();
-                               
-                                if (request.getParameter("reserva") != null && request.getParameter("reserva").equals("Libre")) {
-                                    if (listareserva.isEmpty()) {
-                                        
-                                         listareserva = new LinkedList();
-                                    } else {
-                                        listareserva = ConexionEstatica.Obtenerreservas();
-                                        java.sql.Date fecha = java.sql.Date.valueOf(request.getParameter("fecha"));
-                                        int aula = a.getCod_Aula();
-                                        String descripcion = a.getDescripcion();
-                                        String comienzo = h.getComienzo();
-                                        String fin = h.getFin();
-                                        String profesor = session.getAttribute("user").toString();
-                                        int cod_reserva = listareserva.size() + 1;
-                                        Reserva r = new Reserva (cod_reserva, aula, descripcion, comienzo, fin, fecha, profesor);
-                                        listareserva.add(r);
-                                        Bitacora.Escribirbitacora("El usuario " + session.getAttribute("user").toString() + " ha reservado el aula " + aula + " en las horas " + comienzo + ", " + fin + "\r\n");
-                                    }
-                                    %>
-                                    <input type="button" name="reserva" value="Reservado">
-                                    <%
-                                    session.setAttribute("listareservas", listareserva);
-                                }
+                    LinkedList<Reserva> listareserva = new LinkedList();
+
+                    if (request.getParameter("reserva") != null && request.getParameter("reserva").equals("Libre")) {
+                        if (listareserva.isEmpty()) {
+
+                            listareserva = new LinkedList();
+                        } else {
+                            listareserva = ConexionEstatica.Obtenerreservas();
+                            java.sql.Date fecha = java.sql.Date.valueOf(request.getParameter("fecha"));
+                            int aula = a.getCod_Aula();
+                            String descripcion = a.getDescripcion();
+                            String comienzo = h.getComienzo();
+                            String fin = h.getFin();
+                            String profesor = session.getAttribute("user").toString();
+                            int cod_reserva = listareserva.size() + 1;
+                            Reserva r = new Reserva(cod_reserva, aula, descripcion, comienzo, fin, fecha, profesor);
+                            listareserva.add(r);
+                            Bitacora.Escribirbitacora("El usuario " + session.getAttribute("user").toString() + " ha reservado el aula " + aula + " en las horas " + comienzo + ", " + fin + "\r\n");
+                        }
+                %>
+                <input type="button" name="reserva" value="Reservado">
+                <%
+                                session.setAttribute("listareservas", listareserva);
                             }
                         }
+                    }
 
-                    %>
+                %>
             </table>
 
             <br>

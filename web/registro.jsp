@@ -13,19 +13,19 @@
         <title>Registro de usuarios</title>
         <link rel="stylesheet" type="text/css" href="css/miestilo.css">
         <script>
-            function passiguales () {
+            function passiguales() {
                 var c1 = document.getElementById("passwd").value;
                 var c2 = document.getElementById("rpasswd").value;
                 if (c1 !== c2) {
                     alert("Las contraseñas no coinciden");
-                } 
+                }
             }
         </script>
     </head>
     <body>
-         <div>
+        <div>
             <fieldset>
-                
+
                 <form name="formulario" id="registrarse" onsubmit="passiguales()" action="controladorindex.jsp" method="POST">
                     <label for="usuario">Email </label>
                     <input type="email" name="email" id="usuario" required="" placeholder="Escriba su email"><br>
@@ -47,12 +47,16 @@
                         <input type="radio" name="tipo" value="adminaula">Administrador de Aula<br>
 
                     </fieldset>
+                    <label for="foto"> Foto de perfil: </label>
+                    <input type="file" name="fichero"/></br> 
+                    <input type="submit" value="Subir fichero"/> 
+                    <br>
 
                     <input type="submit" name="Registrarse" id="regist" value="Registrarse">
                     <input type="submit" name="volverindex" id="volver" value="Volver">
                 </form>
             </fieldset>
         </div>
-        
+
     </body>
 </html>

@@ -5,6 +5,8 @@
  */
 package Datos;
 
+import java.sql.Blob;
+
 /**
  *
  * @author Celia
@@ -17,9 +19,16 @@ public class Profesor {
     private String usuario;
     private String passwd;
     private int rol;
+    private byte[] foto; 
+    private Blob fotoBlob;
     
     //-----------------CONSTRUCTOR-----------------
 
+    public Profesor() {
+    }
+
+    
+    
     public Profesor(int cod_profesor, String nombre, String usuario, String passwd) {
         this.cod_profesor = cod_profesor;
         this.nombre = nombre;
@@ -37,6 +46,17 @@ public class Profesor {
         this.rol = rol;
     }
 
+    public Profesor(int cod_profesor, String nombre, String usuario, String passwd, int rol, byte[] foto, Blob fotoBlob) {
+        this.cod_profesor = cod_profesor;
+        this.nombre = nombre;
+        this.usuario = usuario;
+        this.passwd = passwd;
+        this.rol = rol;
+        this.foto = foto;
+        this.fotoBlob = fotoBlob;
+    }
+
+    
     
     //----------------GETTER Y SETTER----------------
     
@@ -79,6 +99,23 @@ public class Profesor {
     public void setRol(int rol) {
         this.rol = rol;
     }
+
+    public byte[] getFoto() {
+        return foto;
+    }
+
+    public void setFoto(byte[] foto) {
+        this.foto = foto;
+    }
+
+    public Blob getFotoBlob() {
+        return fotoBlob;
+    }
+
+    public void setFotoBlob(Blob fotoBlob) {
+        this.fotoBlob = fotoBlob;
+    }
+    
     
     //----------------TO STRING-------------
 
