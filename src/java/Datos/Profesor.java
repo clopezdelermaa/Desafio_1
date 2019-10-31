@@ -100,21 +100,7 @@ public class Profesor {
         this.rol = rol;
     }
 
-    public byte[] getFoto() {
-        return foto;
-    }
-
-    public void setFoto(byte[] foto) {
-        this.foto = foto;
-    }
-
-    public Blob getFotoBlob() {
-        return fotoBlob;
-    }
-
-    public void setFotoBlob(Blob fotoBlob) {
-        this.fotoBlob = fotoBlob;
-    }
+  
     
     
     //----------------TO STRING-------------

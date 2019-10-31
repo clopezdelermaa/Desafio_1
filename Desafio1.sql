@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 24-10-2019 a las 10:53:30
+-- Tiempo de generación: 31-10-2019 a las 10:05:44
 -- Versión del servidor: 5.7.27-0ubuntu0.18.04.1
--- Versión de PHP: 7.2.19-0ubuntu0.18.04.2
+-- Versión de PHP: 7.2.24-0ubuntu0.18.04.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -100,7 +100,9 @@ CREATE TABLE `profesores` (
 INSERT INTO `profesores` (`cod_profesor`, `nombre`, `usuario`, `passwd`) VALUES
 (1, 'Clementine', 'clem@tine.com', '1234'),
 (2, 'Macbeth', 'mac@teh.com', '1234'),
-(3, 'Hamlet', 'ham@prism.com', '1234');
+(3, 'Hamlet', 'ham@prism.com', '1234'),
+(4, 'aracne', 'aracne@phobia.com', '1'),
+(5, 'Tali', 'Tali@zorah.com', '234');
 
 -- --------------------------------------------------------
 
@@ -140,7 +142,10 @@ CREATE TABLE `RolProfesor` (
 INSERT INTO `RolProfesor` (`cod_profesor`, `rol`) VALUES
 (1, 1),
 (2, 2),
-(3, 3);
+(3, 3),
+(4, 1),
+(4, 1),
+(5, 1);
 
 --
 -- Índices para tablas volcadas
@@ -198,7 +203,7 @@ ALTER TABLE `Aula`
 -- AUTO_INCREMENT de la tabla `profesores`
 --
 ALTER TABLE `profesores`
-  MODIFY `cod_profesor` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `cod_profesor` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- Restricciones para tablas volcadas
 --

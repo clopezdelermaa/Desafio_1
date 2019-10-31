@@ -119,33 +119,6 @@
         session.setAttribute("listausuarios", listausuarios);
         ConexionEstatica.cerrarBD();
 
-//--------------------------------- Para subir imágenes --------------------------------
-        FileItemFactory factory = new DiskFileItemFactory();
-        ServletFileUpload upload = new ServletFileUpload(factory);
-        List items = upload.parseRequest(request);
-        Profesor p = new Profesor();
-        for (Object item : items) {
-            FileItem uploaded = (FileItem) item;
-            if (!uploaded.isFormField()) {
-                String rutaDestino = "perfiles/";
-                File fichero = new File(rutaDestino, uploaded.getName());
-                uploaded.write(fichero);
-                byte[] icono = new byte[(int) fichero.length()];
-                InputStream input = new FileInputStream(fichero);
-                input.read(icono);
-                p.setFoto(icono);
-                out.println("Archivo '" + uploaded.getName() + "' subido correctamente.");
-            } else {
-                String key = uploaded.getFieldName();
-                String valor = uploaded.getString();
-                out.println("Valor recuperado con uploaded: " + key + " = " + valor + "</br>");
-                if (key.equals("nombre")) {
-                    p.setNombre(valor);
-                }
-                
-            }
-        }
-       
-    }
+
 
 %>

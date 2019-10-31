@@ -47,10 +47,7 @@
                         <input type="radio" name="tipo" value="adminaula">Administrador de Aula<br>
 
                     </fieldset>
-                    <label for="foto"> Foto de perfil: </label>
-                    <input type="file" name="fichero"/></br> 
-                    <input type="submit" value="Subir fichero"/> 
-                    <br>
+                    
 
                     <input type="submit" name="Registrarse" id="regist" value="Registrarse">
                     <input type="submit" name="volverindex" id="volver" value="Volver">

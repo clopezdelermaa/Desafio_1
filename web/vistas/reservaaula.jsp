@@ -29,19 +29,19 @@
             Elija aula
             <br>
             <%
-                LinkedList<Aula> listaulas = (LinkedList<Aula>) session.getAttribute("listaaulas");
-                LinkedList<Horario> listahora = (LinkedList<Horario>) session.getAttribute("listahoras");
 
-
+               
             %>
             <select id="au">
-                <% for (int i = 0; i < listaulas.size(); i++) {
+                <%
+                    LinkedList<Aula> listaulas = (LinkedList<Aula>) session.getAttribute("listaaulas");
+                    for (int i = 0; i < listaulas.size(); i++) {
 
                         Aula a = listaulas.get(i);
 
-                %><option><%=a.getCod_Aula()%></option><%
+                %><option><%=a.getCod_Aula()%></option><%%>
 
-                %>
+                
             </select>
             <br>
             <br>
@@ -59,10 +59,12 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <%      for (int c = 0; c < listahora.size(); c++) {
-                            Horario h = listahora.get(c);
-                    %>
-                    <tr>
+
+                    <tr> 
+                        <%      LinkedList<Horario> listahora = (LinkedList<Horario>) session.getAttribute("listahoras");
+                                for (int c = 0; c < listahora.size(); c++) {
+                                Horario h = listahora.get(c);
+                        %>
                         <td><%=h.getComienzo()%></td>
                         <td><%=h.getFin()%></td>
                         <td><input type="button" name="reserva" value="Libre"></td>
@@ -70,7 +72,6 @@
 
                 </tbody>
                 <%
-                    
 
                     LinkedList<Reserva> listareserva = new LinkedList();
 
