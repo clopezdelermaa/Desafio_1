@@ -14,7 +14,7 @@
     </head>
     <body>
         <header>
-            <h1>Administrador General</h1>
+            <h1>Administrador de Aula</h1>
         </header>
         <nav>
             <ul>

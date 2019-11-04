@@ -198,3 +198,23 @@ form#crud button {
     margin-top: 10px;
     
 }
+form#registrarse {
+    width: 70%;
+    margin: 0px;
+}
+form#registrarse input[type=text] {
+    width: 164px;
+}
+form#registrarse input[type=email] {
+    width: 150px;
+}
+form#registrarse input[type=password] {
+    width: 150px;
+}
+form#registrarse fieldset {
+    width: 240px;
+}
+form#registrarse input[type=submit] {
+    width: 150px;
+    
+}

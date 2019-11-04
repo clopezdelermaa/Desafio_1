@@ -222,22 +222,22 @@ public class ConexionEstatica {
     //--------MÉTODOS DE INSERCIÓN ----------
     public static void Insertarprofesores(int cod_profesor, String nombre, String usuario, String passwd) throws SQLException {      
             String sentencia = "INSERT INTO " + Constantes.tablaprofesores + " VALUES (" + cod_profesor + ", '" + nombre + "', '" + usuario + "', '" + passwd + "')";
-            Sentencia_sql.execute(sentencia);
+            Sentencia_sql.executeUpdate(sentencia);
     }
 
     public static void Insertarrol(int cod_profesor, int rol) throws SQLException {
         String sentencia = "INSERT INTO " + Constantes.tablarol + " VALUES (" + cod_profesor + "," + rol + ")";
-        Sentencia_sql.execute(sentencia);
+        Sentencia_sql.executeUpdate(sentencia);
     }
 
     public static void Insertarhora(int numero, String comienzo, String fin) throws SQLException {
         String sentencia = "INSERT INTO " + Constantes.tablahorario + " VALUES (" + numero + ", '" + comienzo + "', '" + fin + "')";
-        Sentencia_sql.execute(sentencia);
+        Sentencia_sql.executeUpdate(sentencia);
     }
 
     public static void Insertaraula(int cod_aula, String Descripcion) throws SQLException {
         String sentencia = "INSERT INTO " + Constantes.tablaula + " VALUES (" + cod_aula + ", '" + Descripcion + "')";
-        Sentencia_sql.execute(sentencia);
+        Sentencia_sql.executeUpdate(sentencia);
     }
 
     //--------------------------- MÉTODOS DE MODIFICACION DE TABLAS -----------------
