@@ -10,7 +10,7 @@ and open the template in the editor.
 
 *{
     margin: 0px;
-   
+
 }
 
 html {
@@ -84,14 +84,14 @@ table thead th, table tbody td {
     border: thin solid aliceblue;
     padding: 0px;
     margin: 0px;
-    
+
     vertical-align: middle;
     height: 2em;
 }
 table td input[type=button] {
-   font-size: 11pt;
+    font-size: 11pt;
     text-align: center;
-    
+
 }
 
 table thead th{
@@ -145,7 +145,7 @@ nav li a {
     display: block;
     margin: 0px;
     padding: 5px 10px;
-    
+
     width: 200px;
     height: 2em;
     box-sizing: border-box;
@@ -196,7 +196,7 @@ form#crud button {
     width: 80px;
     height: 43px;
     margin-top: 10px;
-    
+
 }
 form#registrarse {
     width: 70%;
@@ -216,5 +216,83 @@ form#registrarse fieldset {
 }
 form#registrarse input[type=submit] {
     width: 150px;
-    
+
 }
+
+@media screen and (max-device-width: 320px) {
+    *{
+        font-size: 8pt;
+    }
+    form#index {
+        width: 75%;
+    }
+    h1 {
+        font-size: 13pt;
+        margin-top: 10px;
+    }
+    form#crud {
+        width: 70%;
+    }
+    form#registrarse {
+        width: 65%;
+
+    }
+    form#registrarse input[type=text] {
+        width: 55%;
+    }
+    form#registrarse input[type=email], form#registrarse input[type=password] {
+        width: 50%;
+    }
+    form#registrarse fieldset {
+        width: 63%;
+    }
+    form#registrarse input[type=submit]{
+        width: 150px;
+    }
+    form#reserva {
+        width: 75%;
+    }
+    form#reserva table {
+        width: 90%;
+    }
+    table#horario {
+        width: 300px;
+    }
+    table#aulario tbody td input[type=text] {
+        width: 49px;
+    }
+    table#aulario tbody td input[type=button] {
+        font-size: 8pt;
+        width: 60px;
+    }
+
+    form#recuperarpasswd {
+        width: 250px;
+    }
+}
+    @media screen and (max-device-width: 360px) {
+        form#index {
+            width: 300px;
+        }
+        form#registrarse {
+            width: 80%;
+        }
+        form#registrarse fieldset {
+            margin-left: 30px;
+        }
+        
+        form#registrarse input[type=submit] {
+            margin-left: 80px;
+        }
+        form#crud {
+            width: 200px;
+        }
+        table#aulario tbody td input[type=text] {
+            width: 57px;
+            font-size: 8pt;
+        }
+        table#aulario tbody td input[type=button]{
+            font-size: 8pt;
+            width: 60px; 
+        }
+    }

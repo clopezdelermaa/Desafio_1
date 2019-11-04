@@ -23,7 +23,7 @@
     </head>
     <body>
 
-        <form name="formularioprofesor" action="controladorindex.jsp" method="POST">
+        <form name="formularioprofesor" id="reserva" action="controladorindex.jsp" method="POST">
             Elija fecha<input type="date" id="fecha" name="fecha" value="" min=""><br>
             <br>
             Elija aula

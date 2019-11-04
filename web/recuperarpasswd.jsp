@@ -19,7 +19,7 @@
         <link rel="stylesheet" type="text/css" href="css/miestilo.css">
     </head>
     <body>
-        <form name="recuperarpasswd" action="" method="POST">
+        <form name="recuperarpasswd" id ="recuperarpasswd" action="" method="POST">
             <input type="email" name="email" placeholder="Escriba su email">
             <input type="submit" name="recuperar" value="Recuperar Contraseña">
             <%

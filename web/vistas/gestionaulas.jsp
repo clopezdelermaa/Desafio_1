@@ -33,7 +33,7 @@
         <br>
 
 
-        <table>
+        <table id="aulario">
             <thead>
                 <tr>
                     <th>NOMBRE</th>
